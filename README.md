@@ -4,9 +4,9 @@ The implementation for the paper Asymmetric Beta Loss for Evidence-Based Safe Se
 
 ## Preparing Data
 
-The partition of the OOD dataset in the paper is available at [link]. 
+The partition of the OOD dataset in the paper is available at [formatted OOD data](https://drive.google.com/file/d/1ArIEVt-qjr41w5i3FJdjq3ne8S6qI92G/view?usp=sharing). 
 
-The manually selected subset of ImageNet-21K can be downloaded from [link].
+The manually selected subset of ImageNet-21K can be downloaded from [selected ImageNet-21K for voc&coco](https://drive.google.com/file/d/13-fVGpQMJsZgo4lK5r3VonEduYSYkdc0/view?usp=sharing) and [selected ImageNet-21K for nus](https://drive.google.com/file/d/18XfXYWvMKLzu0y04kUZEFcycQIgU4SlK/view?usp=sharing).
 
 We can also generate the formatted OOD dataset with different parameters through `./generate_data.py`.
 

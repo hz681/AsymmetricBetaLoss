@@ -173,7 +173,12 @@ def gen_data_with_fixed_ID(dataset_dir, dataset_name, ID_d_OOD, seed, save=True)
     n_train = len(close_set_data['train']['labels'])
     indices = nrs.permutation(n_train)
 
-    for lb_ID in [2000, 4000, 6000, 8000]:
+    if dataset_name=='nus':
+        ID_num = [2000, 4000, 6000, 8000]
+    elif dataset_name=='coco':
+        ID_num = [1000, 2000, 3000, 4000]
+
+    for lb_ID in ID_num:
 
         n_lb = lb_ID
         n_OOD = len(open_set_data)
@@ -212,6 +217,6 @@ def gen_data_with_fixed_ID(dataset_dir, dataset_name, ID_d_OOD, seed, save=True)
             np.save(f'{path}/test_label.npy', close_set_data['val']['labels'])
 
 
-# gen_data_without_openset('/home/algroup/lhz/dataset', 'coco', 4.5, 1, seed=1, save=True)
-gen_data_with_in21k('/home/algroup/lhz/dataset', 'coco', seed=1, save=True)
-# gen_data_with_fixed_ID('/home/algroup/lhz/dataset', 'nus', 4, seed=1, save=False)
+# gen_data_without_openset('./dataset', 'coco', 4.5, 1, seed=1, save=True)
+gen_data_with_in21k('./dataset', 'coco', seed=1, save=True)
+# gen_data_with_fixed_ID('./dataset', 'nus', 4, seed=1, save=True)
